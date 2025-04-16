@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f3f3f3;
+      background-color: #f9f9f9;
       text-align: center;
       padding: 40px;
     }
@@ -63,10 +63,10 @@
 
   <script>
     function abrirNequi() {
-      const numero = "3117744704"; // <- tu número Nequi
+      const numero = "3117744704";
       navigator.clipboard.writeText(numero).then(() => {
-        alert("¡Número copiado al portapapeles! Abriendo la app de Nequi...");
-        // Intenta abrir Nequi si el usuario está en un celular
+        alert("¡Número copiado al portapapeles! Ahora abre Nequi y pégalo en 'Enviar dinero'.");
+        // Intenta abrir la app Nequi (solo funciona si está instalada y desde celular)
         window.location.href = "nequi://";
       });
     }
