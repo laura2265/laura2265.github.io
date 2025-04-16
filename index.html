@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enviar plata por Nequi</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      color: #A61B27;
+    }
+    .nequi-button {
+      background-color: #A61B27;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .nequi-button:hover {
+      background-color: #8e1822;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Envíame plata por Nequi</h1>
+  <p>Haz clic en el botón para abrir Nequi y enviarme dinero.</p>
+
+  <!-- BOTÓN -->
+  <button class="nequi-button" onclick="enviarNequi()">Enviar con Nequi</button>
+
+  <script>
+    function enviarNequi() {
+      // Reemplaza este número con tu número real de Nequi
+      const numero = "3117744704";
+      window.location.href = `nequi://send-money?phone=${numero}`;
+    }
+  </script>
+
+</body>
+</html>
