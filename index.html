@@ -1,47 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Enviar plata por Nequi</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
+      background-color: #f3f3f3;
       text-align: center;
-      margin-top: 100px;
-      background-color: #f0f0f0;
+      padding: 40px;
     }
+
     h1 {
       color: #A61B27;
     }
-    .nequi-button {
+
+    .nequi-btn {
       background-color: #A61B27;
       color: white;
       padding: 15px 30px;
       font-size: 18px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      margin: 20px 0;
+      transition: background-color 0.3s;
     }
-    .nequi-button:hover {
+
+    .nequi-btn:hover {
       background-color: #8e1822;
+    }
+
+    .qr-section {
+      margin-top: 30px;
+    }
+
+    .qr-section img {
+      width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .info {
+      font-size: 16px;
+      color: #333;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Envíame plata por Nequi</h1>
-  <p>Haz clic en el botón para abrir Nequi y enviarme dinero.</p>
+  <h1>Envíame plata por Nequi 💸</h1>
+  <p class="info">Haz clic en el botón para copiar mi número y abrir Nequi.</p>
 
-  <!-- BOTÓN -->
-  <button class="nequi-button" onclick="enviarNequi()">Enviar con Nequi</button>
+  <button class="nequi-btn" onclick="abrirNequi()">Enviar por Nequi</button>
+
+  <div class="qr-section">
+    <p class="info">O escanea este código QR desde tu app de Nequi:</p>
+    <img src="qr-nequi.png" alt="Código QR de Nequi" />
+  </div>
 
   <script>
-    function enviarNequi() {
-      // Reemplaza este número con tu número real de Nequi
-      const numero = "3117744704";
-      window.location.href = `nequi://send-money?phone=${numero}`;
+    function abrirNequi() {
+      const numero = "3117744704"; // <- tu número Nequi
+      navigator.clipboard.writeText(numero).then(() => {
+        alert("¡Número copiado al portapapeles! Abriendo la app de Nequi...");
+        // Intenta abrir Nequi si el usuario está en un celular
+        window.location.href = "nequi://";
+      });
     }
   </script>
 
