@@ -7,17 +7,17 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f3f3f3;
       text-align: center;
       padding: 40px;
     }
 
     h1 {
-      color: #A61B27;
+      color: #7f1ba6;
     }
 
     .nequi-btn {
-      background-color: #A61B27;
+      background-color: #7f1ba6;
       color: white;
       padding: 15px 30px;
       font-size: 18px;
@@ -29,7 +29,7 @@
     }
 
     .nequi-btn:hover {
-      background-color: #8e1822;
+      background-color: #6f188e;
     }
 
     .qr-section {
@@ -57,16 +57,21 @@
   <button class="nequi-btn" onclick="abrirNequi()">Enviar por Nequi</button>
 
   <div class="qr-section">
-    <p class="info">O escanea este código QR desde tu app de Nequi:</p>
-    <img src="qr-nequi.png" alt="Código QR de Nequi" />
+    <p class="info">Funcion DEAC<br/> Donar por nequi:</p>
+    <video controls>
+      <source src="./assets/video/Video.mp4" type="video/mp4" />
+
+      <p>
+        Su navegador no soporta video HTML5. <br /> Aqui hay un <a href="./assets//video/Video.mp4">Enlace del video</a>
+      </p>
+    </video>
   </div>
 
   <script>
     function abrirNequi() {
       const numero = "3117744704";
       navigator.clipboard.writeText(numero).then(() => {
-        alert("¡Número copiado al portapapeles! Ahora abre Nequi y pégalo en 'Enviar dinero'.");
-        // Intenta abrir la app Nequi (solo funciona si está instalada y desde celular)
+        alert("¡Número copiado al portapapeles! Abriendo la app de Nequi...");
         window.location.href = "nequi://";
       });
     }
